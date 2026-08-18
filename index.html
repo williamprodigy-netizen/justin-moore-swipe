@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview — Justin Moore — Creator Wizard / Sponsor Magnet</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--panel:#f8fafc;--bg:#eef0f3;
+ --accent:#4f46e5;--good:#059669;--warn:#ea580c;--bad:#9f1239}
+@media(prefers-color-scheme:dark){:root{--ink:#e8eaed;--muted:#9aa3b2;--line:#2a3140;
+ --panel:#151a23;--bg:#0d1117;--accent:#818cf8}}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.55}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header.top{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.topin{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:26px;height:60px}
+.brand{font-size:15px;font-weight:600;white-space:nowrap}
+.brand span{color:var(--muted);font-weight:400}
+nav.main{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a{font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;
+ padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink)}
+nav.main a.on{color:var(--ink);border-bottom-color:var(--accent)}
+.hero{padding:48px 0 26px}
+.kick{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.hero h1{font-size:40px;margin-bottom:14px;line-height:1.15}
+.hero p{font-size:17px;color:var(--muted);max-width:820px}
+section{padding:26px 0}
+h2.sec{font-size:22px;margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{font-size:15px;margin-bottom:7px}
+.card p{font-size:14px;color:var(--muted)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stat .n{font-size:26px;font-weight:600;letter-spacing:-.03em}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;
+ border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.tag.good{color:var(--good);border-color:var(--good)}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+figure{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+figure img{width:100%;display:block;background:#000;cursor:zoom-in}
+figcaption{padding:8px 10px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+figcaption b{color:var(--ink);font-weight:600}
+details{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin-bottom:9px}
+summary{padding:12px 15px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;
+ display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary .meta{font-size:12px;color:var(--muted);font-weight:400;white-space:nowrap}
+details .body{padding:0 15px 15px;font-size:14.5px;line-height:1.72;color:var(--ink)}
+details .body p{margin-bottom:12px}
+.ts{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;font-size:12.5px}
+.searchbar{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:9px;
+ background:var(--panel);color:var(--ink);font-size:14.5px;margin-bottom:14px;font-family:inherit}
+.note{border-left:3px solid var(--accent);padding:11px 15px;background:var(--panel);
+ border-radius:0 9px 9px 0;font-size:14px;margin-bottom:13px}
+.note.warn{border-left-color:var(--warn)}
+footer{padding:36px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:34px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:none;align-items:center;
+ justify-content:center;z-index:99;cursor:zoom-out;padding:20px}
+#lb img{max-width:100%;max-height:92vh;object-fit:contain}
+#lb .cap{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:#cbd5e1;font-size:13px;padding:0 20px}
+</style></head><body>
+<header class="top"><div class="topin">
+<div class="brand">Justin Moore <span>swipe</span></div>
+<nav class="main"><a href="index.html" class="on">Overview</a><a href="analysis.html" class="">Analysis</a><a href="pages.html" class="">Funnel pages</a><a href="copybank.html" class="">Copy bank</a><a href="board.html" class="">Wired board</a></nav></div></header>
+<div class="wrap">
+<div class="hero"><div class="kick">Competitor swipe · captured 11 August 2026</div>
+<h1>Justin Moore — Creator Wizard / Sponsor Magnet</h1><p>The structural opposite of every funnel in this file. No paid traffic, no webinar, no VSL, no countdown theatre. A 27,000-person newsletter that delivers real sponsorship opportunities twice a week feeds a $27 four-day live challenge, which feeds a <b>$12,000</b> coaching program sold by a two-branch application that gates on revenue already earned. The move worth studying: he <b>killed his $3,000 course and made it a free bonus inside the coaching</b>, leaving the full sales page live as a value stack.</p></div>
+<section><div class="grid g4"><div class="stat"><div class="n">$27</div><div class="l">Front-end</div></div><div class="stat"><div class="n">$12,000</div><div class="l">Back-end</div></div><div class="stat"><div class="n">26,998</div><div class="l">Newsletter</div></div><div class="stat"><div class="n">15</div><div class="l">Funnel pages</div></div><div class="stat"><div class="n">0</div><div class="l">Active Meta ads</div></div><div class="stat"><div class="n">15</div><div class="l">Application Qs</div></div><div class="stat"><div class="n">2</div><div class="l">App branches</div></div><div class="stat"><div class="n">$590</div><div class="l">Bonus stack</div></div></div></section>
+<section><h2 class="sec">The offer</h2><div class="tablewrap"><table><tr><th>Operator</th><td>Justin Moore &mdash; sponsorship coach, author of <i>Sponsor Magnet</i>. Claims $5M+ personal sponsorship revenue since 2009 and 1,000+ brand campaigns facilitated through a 7-year ad agency.</td></tr><tr><th>Who he sells to</th><td>Creators, newsletter operators and podcasters who already get inbound brand interest but convert it into $200&ndash;$1,000 deals instead of $10,000 ones. <b>Not beginners.</b></td></tr><tr><th>Positioning</th><td>&ldquo;We&rsquo;re coaches, not managers. You keep 100% of your sponsorship revenue.&rdquo; The <b>0% Cut Policy</b> sits in the top nav and the footer of every page. His named competitor is a talent manager taking 20%, not another course.</td></tr><tr><th>Free tier</th><td>Newsletter (26,998, Mon + Thu) &middot; podcast &middot; YouTube &middot; free AI social audit tool at audit.sponsormagnet.com</td></tr><tr><th>$19 tier</th><td><i>Sponsor Magnet</i> &mdash; $9 ebook / $10 audiobook. Also given away free as Bonus #1 on the $27 challenge.</td></tr><tr><th>$27 tier</th><td><b>$10K Brand Deal Challenge</b>, Aug 17&ndash;20 2026, 4 days &times; 60 mins, 11am CST. List price $97, discounted to $27 by a SUMMERSALE coupon pre-applied in the checkout link.</td></tr><tr><th>Challenge stack</th><td>$590 of bonuses on a $27 ticket &mdash; Sponsor Magnet book bundle ($19), Negotiation Scripts &amp; Templates Vault ($197), Sponsorship Wheel Tracker ($247), Professional Brand Partnership Toolkit ($127)</td></tr><tr><th>Challenge guarantee</th><td>100% money-back within 7 days, <b>conditional on attending all four live sessions with your camera on</b>. Re-enrol-and-refund is explicitly barred.</td></tr><tr><th>$697-997 tier</th><td><b>Sponsor Games 2027</b> &mdash; 3-day in-person event. $997, early bird $697. $5,000 cash grand prize plus 7 runner-up prizes of real $2,500 brand deals funded by Lulu, Paperform and Kit.</td></tr><tr><th>$12,000 tier</th><td><b>Wizard&rsquo;s Guild</b> sponsorship coaching. Private 1-1 space, 2&times; monthly live group sessions, async support answered Tuesday and Thursday. Monthly payment plan on a 1-year commitment. Full Brand Deal Wizard course included free.</td></tr><tr><th>Coaching guarantee</th><td><b>None stated anywhere.</b></td></tr><tr><th>Killed offer</th><td><b>Brand Deal Wizard</b>, previously $3,000 (or 3&times;$1,095) as a cohort course. The sales page is still live and opens with &ldquo;UPDATE: Access to Brand Deal Wizard is now FREE when you join our Sponsorship Coaching program!&rdquo;</td></tr><tr><th>How the price is disclosed</th><td>Never on a sales page. It appears once, mid-application, as a commitment question: &ldquo;would it be well worth the <b>$12k</b> investment to work with us?&rdquo;</td></tr><tr><th>Affiliate economics</th><td>Coaching 15% ongoing &middot; book 25% &middot; challenge <b>100%</b> of the registration fee plus 15% recurring on any coaching enrolment it produces.</td></tr><tr><th>Stack</th><td>Framer (site) &middot; Kit form 6540565 (newsletter) &middot; Paperform ztbjvcrc (application) &middot; Spiffy (checkout) &middot; Vimeo (video) &middot; Meta Pixel + GTM + GA + <b>Hyros</b></td></tr></table></div></section>
+<section><h2 class="sec">What matters</h2><div class="grid g2"><div class="card"><h3>He killed a $3,000 course to make his $12,000 offer heavier</h3><p>Brand Deal Wizard used to be a $3,000 cohort course &mdash; his main product for years. The page is still live, still 27,000 characters, still 20+ Vimeo modules and 506 testimonials, and now its <b>only outbound link is the coaching application</b>. The first line of the page is &ldquo;UPDATE: Access to Brand Deal Wizard is now FREE when you join our Sponsorship Coaching program!&rdquo; He didn't delete the asset, he demoted it into the value stack of the offer above it. The whole sales page now works as proof of what the $12k includes.</p></div><div class="card"><h3>The $27 ticket is a buyer filter, not a revenue line</h3><p>$27 against $590 of stacked bonuses cannot be about margin. It does three things a free webinar can&rsquo;t: it takes a card, it takes a <b>phone number plus explicit SMS autodialer consent</b>, and it makes the refund conditional on showing up to all four days with camera on. He is buying a list of people who have paid him once and can legally be called. <i>This is a read, not his stated intent.</i></p></div><div class="card"><h3>The refund condition IS the show-rate mechanism</h3><p>&ldquo;If you attend all the live sessions (with your camera on!), pay attention, put in the work, and don&rsquo;t feel like you received a massive amount of value&hellip; full refund within 7 days.&rdquo; The guarantee is only claimable by someone who attended everything. Nobody has to be nagged into showing up &mdash; the money does it. Replays also expire when the next day starts. Compare: we currently run a free class and fight for show rate with follow-up volume.</p></div><div class="card"><h3>The lead magnet is a recurring deliverable, not a PDF</h3><p>&ldquo;Get brand sponsorship opportunities in your inbox every Monday and Thursday.&rdquo; The subscriber has a reason to open twice a week forever, and the proof on the opt-in page puts a number on the free thing: <b>&ldquo;I have made over $17,000 from brand deals I found through Justin&rsquo;s newsletter.&rdquo;</b> A PDF is consumed once. This compounds, and it is why 27,000 people is enough traffic to run the whole business.</p></div><div class="card"><h3>The application is two branches and gates on cash already earned</h3><p>Paperform ztbjvcrc, titled <b>&ldquo;Sponsorship Coaching Application (Organic)&rdquo;</b> &mdash; the word <i>Organic</i> means a paid-traffic version exists. Branch A opens &ldquo;Have you negotiated a sponsorship in the last 30 days?&rdquo; then asks deals closed in 12 months, sponsorship revenue AND total revenue in six bands from $0 to $200k+, largest deal ever, monthly inbound inquiries, audience size, and job situation. Branch B, for people who haven&rsquo;t closed recently, swaps in the question A never gets: <b>&ldquo;Have you invested money into growing your business in the last 12 months? (coaching, courses, etc.)&rdquo;</b> If you can&rsquo;t show revenue, he checks whether you have ever paid for help.</p></div><div class="card"><h3>The price is a commitment question, not a disclosure</h3><p>&ldquo;If we could help you achieve your sponsorship goals and be in your corner with your pitches, pricing, negotiations, packages, and proposals, <b>would it be well worth the $12k investment to work with us?</b>&rdquo; &mdash; Yes / No / Maybe. Immediately followed by &ldquo;how soon would you want to get started? ASAP / 1&ndash;2 months / 3+ months / I&rsquo;m not interested in coaching at all.&rdquo; Price objection and timeline objection are both dead in writing before a human dials.</p></div><div class="card"><h3>Zero paid traffic. The audience IS the acquisition channel.</h3><p>Meta Pixel, GTM, GA and Hyros are all installed on the challenge page &mdash; he is instrumented to run paid &mdash; but an ad-library sweep returned <b>no active Creator Wizard ads</b>. Traffic is the newsletter, the podcast, the YouTube channel, a published book, an affiliate program paying 100% on the front end, and borrowed authority from Ali Abdaal and Jay Clouse. <i>Keyword search of the ad library is not exhaustive; treat as evidence, not proof.</i></p></div><div class="card"><h3>Proof is named people with public identities, never screenshots</h3><p>Ali Abdaal (&pound;200,000, ~2&times; sponsorship revenue), Jenny Hoyos ($15,000, with a full case-study page), Jenny Wood ($6,000 first deal off one email), Molly Donlan ($17,000 from newsletter opportunities). <b>Zero income screenshots anywhere.</b> Every claim is attached to a person you can go verify yourself, which is a harder asset to build and an unfalsifiable one to attack.</p></div><div class="card"><h3>The event&#x27;s prize is the product</h3><p>Sponsor Games 2027 gives away $5,000 cash plus <b>seven real $2,500 brand deals</b> &mdash; funded by Lulu, Paperform and Kit. Attendees at a sponsorship event win actual sponsorships. The event proves the mechanism, and his sponsors pay the $17,500 prize pool. Tickets are on sale roughly 18 months out.</p></div><div class="card"><h3>Day 3 of the challenge is unfakeable proof of mechanism</h3><p>&ldquo;We&rsquo;ll select creators LIVE to share their dream brands, then I&rsquo;ll show you exactly how to stalk those brands on social media to uncover the hidden clues that reveal what should be in your $10K package. You&rsquo;ll watch me decode their marketing strategy in real-time.&rdquo; Live diagnosis on a stranger&rsquo;s real situation cannot be scripted, and it is the day nobody wants to catch on replay.</p></div></div></section>
+<section><h2 class="sec">Funnel path</h2><div class="tablewrap"><table>
+<tr><th>#</th><th>Step</th><th>URL</th><th>Note</th></tr><tr><td><b>1</b></td><td>Traffic &mdash; 100% owned</td><td><code>newsletter &middot; podcast &middot; YouTube &middot; book &middot; affiliates</code></td><td>26,998 newsletter subscribers mailed Monday and Thursday with real sponsorship opportunities. Plus a weekly podcast, a YouTube channel, a published book, and an affiliate program paying <b>100%</b> of the challenge fee. <span class="tag bad">no active Meta ads found</span></td></tr><tr><td><b>2</b></td><td>Hub</td><td><code>creatorwizard.com</code></td><td>Not a sales page &mdash; a content hub. Podcast, articles, case studies and four offers in the nav. Hero CTA is the positioning: &ldquo;See How You Keep 100%&rdquo;.</td></tr><tr><td><b>3</b></td><td>Self-select router</td><td><code>creatorwizard.com/how-we-can-help</code></td><td>A footer link on every page reading &ldquo;I don&rsquo;t know what I need&rdquo;. Routes to newsletter / podcast / book / coaching by intent. Catches the visitor who isn&rsquo;t ready to buy instead of letting them bounce.</td></tr><tr><td><b>4</b></td><td>Newsletter opt-in</td><td><code>pages.creatorwizard.com/join</code></td><td>First name + email only. No phone, no qualification, no friction. Kit form 6540565. CTA is <b>&ldquo;Send Me Sponsorships&rdquo;</b> &mdash; not &ldquo;subscribe&rdquo;.</td></tr><tr><td><b>5</b></td><td>Free AI audit tool</td><td><code>audit.sponsormagnet.com</code></td><td>Enter a YouTube / TikTok / IG handle, get a personalised report on why sponsors aren&rsquo;t buying you. A tool, not a PDF &mdash; the output is a diagnosis, so the follow-up already knows the prospect&rsquo;s specific gap.</td></tr><tr><td><b>6</b></td><td>Book</td><td><code>sponsormagnet.com</code></td><td>$9 ebook / $10 audiobook. The authority asset the whole ladder leans on, and simultaneously Bonus #1 on the $27 challenge.</td></tr><tr><td><b>7</b></td><td>Front-end offer</td><td><code>creatorwizard.com/challenge</code></td><td><b>$10K Brand Deal Challenge</b>, Aug 17&ndash;20 2026. &ldquo;Let&rsquo;s build your $10K+ Brand Deal Offer in Just 4 Days&rdquo; with the objection pre-handled in the subhead: &ldquo;even if you don&rsquo;t have a massive audience&hellip; or you&rsquo;re in a weird niche&rdquo;. Meta Pixel + GTM + GA + Hyros all fire here.</td></tr><tr><td><b>8</b></td><td>Checkout</td><td><code>creatorwizard.spiffy.co/checkout/10kchallenge?c=SUMMERSALE</code></td><td>$97 struck to <b>$27</b> by a coupon pre-applied in the link, so the buyer never types a code and never sees full price. Five-day countdown. <span class="tag bad">phone number + SMS autodialer consent collected on a $27 order</span></td></tr><tr><td><b>9</b></td><td>The 4 days</td><td><code>live, 11am CST</code></td><td>Day 1 Command $10K With Confidence &middot; Day 2 $10K Package Structures &middot; Day 3 Use Social Clues to Build the Package (creators picked LIVE) &middot; Day 4 Scale to Multiple 5&ndash;6 Figures/yr. Replays expire when the next day starts.</td></tr><tr><td><b>10</b></td><td>The demoted course</td><td><code>branddealwizard.com</code></td><td>Was $3,000. Now free inside the coaching. Full sales page still live; its only outbound link is the coaching.</td></tr><tr><td><b>11</b></td><td>Application</td><td><code>ztbjvcrc.paperform.co</code></td><td>Paperform titled &ldquo;Sponsorship Coaching Application <b>(Organic)</b>&rdquo;. Two branches, 15 questions, revenue in six bands, and the $12k commitment question. Never submitted.</td></tr><tr><td><b>12</b></td><td>Back end</td><td><code>wizardsguild.com</code></td><td><b>Wizard&rsquo;s Guild &mdash; $12,000.</b> Private 1-1 plus 2&times; monthly group live, async answered Tue + Thu, monthly plan on a 1-year commitment. No guarantee stated. wizardsguild.com and creatorwizard.com/coaching both 301 straight to the application &mdash; there is no live price page.</td></tr><tr><td><b>13</b></td><td>Live event</td><td><code>sponsorgames.com</code></td><td>Sponsor Games 2027. $997, early bird $697. $5,000 cash grand prize plus seven $2,500 brand deals funded by Lulu, Paperform and Kit.</td></tr></table></div></section>
+<footer>Captured 11 August 2026. Evidence in <code>~/UNDERGROUND_FUNNELS_SSOT</code>
+and <code>~/Downloads/JUSTIN_MOORE_Swipe</code>. Built with the <code>/swipe</code> skill.<br>
+Competitor research. Not for redistribution.</footer></div>
+<div id="lb"><img alt=""><div class="cap"></div></div>
+<script>
+document.addEventListener('click',function(e){
+  if(e.target.tagName==='IMG'&&e.target.closest('figure')){
+    var lb=document.getElementById('lb');
+    lb.querySelector('img').src=e.target.dataset.full||e.target.src;
+    var fc=e.target.closest('figure').querySelector('figcaption');
+    lb.querySelector('.cap').textContent=fc?fc.textContent.trim():'';
+    lb.style.display='flex';
+  } else if(e.target.closest('#lb')){document.getElementById('lb').style.display='none';}
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')document.getElementById('lb').style.display='none';
+});
+function wireSearch(id,sel){
+  var b=document.getElementById(id); if(!b)return;
+  b.addEventListener('input',function(){
+    var q=b.value.toLowerCase();
+    document.querySelectorAll(sel).forEach(function(el){
+      el.style.display = !q || el.textContent.toLowerCase().indexOf(q)>-1 ? '' : 'none';
+    });
+  });
+}
+wireSearch('tsearch','details.tr');
+wireSearch('ssearch','figure.sl');
+</script></body></html>
